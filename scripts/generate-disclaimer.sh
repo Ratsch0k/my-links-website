@@ -11,7 +11,3 @@ FILE_CONTENT="export default \`$CLEANED_LICENSES\`"
 echo "Store in $1"
 
 echo "$FILE_CONTENT" > "$1"
-
-echo "Amend to last commit"
-
-git commit --amend --noedit "$1"
