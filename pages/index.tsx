@@ -4,6 +4,7 @@ import Logo from "../components/icons/Logo";
 import {useState} from "react";
 import Imprint from "./imprint";
 import Licenses from "./licenses";
+import Image from 'next/image';
 
 interface LinkItem {
   name: string;
@@ -19,7 +20,7 @@ const links: LinkItem[] = [
   {
     name: 'GitHub',
     url: 'https://github.com/Ratsch0k',
-    icon: <img width={24} height={24} src='/GitHub-64px.png' />
+    icon: <Image width={24} height={24} src='/GitHub-64px.png' />
   }
 ]
 
