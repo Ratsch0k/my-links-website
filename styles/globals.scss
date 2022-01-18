@@ -1,0 +1,224 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  height: 100%;
+  width: 100%;
+}
+/*
+ * ######################################################################
+ * Define variables
+ */
+$color-primary: #FF8C42;
+$text-primary: white;
+$border-radius: 8px;
+
+/*
+ * #######################################################################
+ * Define default classes
+ */
+
+a {
+  color: inherit;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#__next {
+  width: 100%;
+  height: 100%;
+}
+
+/*
+ * Positioning
+ */
+.absolute {
+  position: absolute;
+}
+
+/*
+ * Flex
+ */
+
+.flex {
+  display: flex;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.items-center {
+  align-items: center;
+}
+
+/*
+ * Sizes
+ */
+.h-full {
+  height: 100%;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  margin: 4px;
+  padding: 4px;
+}
+
+/*
+ * Colors
+ */
+
+.bg-primary {
+  background-color: $color-primary;
+}
+
+.primary {
+  color: $color-primary
+}
+
+.bg-white {
+  background-color: white;
+}
+
+.text-primary {
+  color: $text-primary;
+}
+
+
+/*
+ * Text
+ */
+
+.text-center {
+  text-align: center;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+/*
+ * Misc.
+ */
+
+.elevation-8 {
+  box-shadow: 0px 8px 10px 1px rgba(255, 140, 66, 0.4), 0px 3px 14px 3px rgba(255, 140, 66, 0.3), 0px 4px 15px 0px rgba(255, 140, 66, 0.6);
+}
+
+.border-radius {
+  border-radius: $border-radius;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+/*
+ * Default classes for certain components
+ */
+
+.button {
+  cursor: pointer;
+  transition: color 200ms ease-out, background-color 200ms ease-out;
+}
+
+.button:hover {
+  color: $color-primary;
+  background-color: white;
+}
+
+.text-button {
+  cursor: pointer;
+}
+
+.text-button:hover {
+  font-weight: bold;
+}
+
+/*
+ * #################################################################
+ * Define styling for ids
+ */
+
+#text-paper {
+  width: 30rem;
+  border-radius: $border-radius;
+}
+
+/*
+ * ###############################################################
+ * Generate classes with sizings
+ */
+$sizes: 0, 1, 2, 4, 8, 12, 16, 20, 24, 32;
+
+@each $size in $sizes {
+  .p-#{$size} {
+    padding: #{$size}px;
+  }
+
+  .pt-#{$size} {
+    padding-top: $size * 1px;
+  }
+
+  .pl-#{$size} {
+    padding-left: $size * 1px;
+  }
+
+  .pr-#{$size} {
+    padding-right: $size * 1px;
+  }
+
+  .pb-#{$size} {
+    padding-bottom: $size * 1px;
+  }
+
+  .m-#{$size} {
+    margin: $size * 1px;
+  }
+
+  .mt-#{$size} {
+    margin-top: #{$size}px;
+  }
+
+  .ml-#{$size} {
+    margin-left: $size * 1px;
+  }
+
+  .mr-#{$size} {
+    margin-right: $size * 1px;
+  }
+
+  .mb-#{$size} {
+    margin-bottom: #{$size}px;
+  }
+
+  .bottom-#{$size} {
+    bottom: $size * 1px;
+  }
+
+  .left-#{$size} {
+    left: $size * 1px;
+  }
+
+  .right-#{$size} {
+    right: $size * 1px;
+  }
+
+  .top-#{$size} {
+    top: $size * 1px;
+  }
+}
