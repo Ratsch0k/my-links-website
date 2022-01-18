@@ -61,7 +61,7 @@ export default function Home() {
         </div>
       </div>
       <div className='absolute bottom-0 right-0 flex bg-white p-4' style={{flexDirection: 'row'}}>
-        <div className='primary text-button mt-8' onClick={() => setOpenImprint(true)}>
+        <div className='primary text-button mr-8' onClick={() => setOpenImprint(true)}>
           Impressum
         </div>
         <div className='primary text-button' onClick={() => setOpenLic(true)}>
