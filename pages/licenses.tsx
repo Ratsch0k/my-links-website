@@ -10,7 +10,7 @@ const Licenses = (props: LicensesProps) => {
   const {close, open} = props;
 
   return (
-    <Dialog sx={{content: {maxWidth: 600}}} open={open}>
+    <Dialog sx={{content: {maxWidth: '100%', width: 600}}} open={open}>
       <DialogTitle onClose={close}>
         Lizensen
       </DialogTitle>

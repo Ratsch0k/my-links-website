@@ -17,7 +17,7 @@ const DialogTitle: FC<DialogTitleProps> = (props) => {
   const {onClose, children} = props;
 
   return (
-    <h2>
+    <h2 className='mt-8'>
       {children}
       <div className='pointer' onClick={onClose} style={{display: 'inline', textAlign: 'end', float: 'right'}}>
         <CloseIcon />
