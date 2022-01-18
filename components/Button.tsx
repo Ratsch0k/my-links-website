@@ -1,29 +1,39 @@
-import React, {FC} from 'react';
-import {ComponentProps} from "../next-env";
+import React, {ComponentPropsWithoutRef} from 'react';
 
-export interface ButtonProps {
+export interface ButtonProps extends ComponentPropsWithoutRef<'button'> {
   size?: 'small' | 'medium' | 'large';
 }
 
-export const Button: FC<React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> & ComponentProps & ButtonProps> = (props) => {
-  const {id, className, style, children, size, ...rest} = props;
+const defaultProps = {
+  size: 'medium',
+};
+
+const sizes = {
+  small: 32,
+  medium: 46,
+  large: 64,
+};
+
+
+export const Button = (props: ButtonProps & typeof defaultProps) => {
+  const {size: _size, className, style, ...rest} = props;
+  const size = sizes[_size];
 
   return (
     <button
-      id={id}
       className={'bg-primary border-radius text-primary p-4 bold pointer button ' + className}
       style={{
         border: 'white 3px solid',
         fontSize: 'larger',
         textTransform: 'uppercase',
-        height: size === 'small' ? 32 : size === 'large' ? 64 : 46,
+        height: size,
         ...style,
       }}
       {...rest}
-    >
-      {children}
-    </button>
+    />
   );
 };
+
+Button.defaultProps = defaultProps;
 
 export default Button;
