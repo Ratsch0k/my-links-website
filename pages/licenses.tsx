@@ -1,16 +1,16 @@
-import Dialog from "../components/Dialog";
-import DialogTitle from "../components/DialogTitle";
-import licensesText from './_licenses';
+import Dialog, {DialogProps} from '../components/Dialog';
+import DialogTitle from '../components/DialogTitle';
+import licensesText from '../components/license-disclaimer';
 
-export interface LicensesProps {
+export interface LicensesProps extends DialogProps {
   close(): void;
 }
 
 const Licenses = (props: LicensesProps) => {
-  const {close} = props;
+  const {close, open} = props;
 
   return (
-    <Dialog sx={{content: {maxWidth: 600}}}>
+    <Dialog sx={{content: {maxWidth: 600}}} open={open}>
       <DialogTitle onClose={close}>
         Lizensen
       </DialogTitle>

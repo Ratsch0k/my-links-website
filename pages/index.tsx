@@ -1,9 +1,9 @@
 import DotBackground from '../components/dot-bg';
-import Button from "../components/Button";
-import Logo from "../components/icons/Logo";
-import {useState} from "react";
-import Imprint from "./imprint";
-import Licenses from "./licenses";
+import Button from '../components/Button';
+import Logo from '../components/icons/Logo';
+import {useState} from 'react';
+import Imprint from './imprint';
+import Licenses from './licenses';
 import Image from 'next/image';
 
 interface LinkItem {
@@ -20,7 +20,7 @@ const links: LinkItem[] = [
   {
     name: 'GitHub',
     url: 'https://github.com/Ratsch0k',
-    icon: <Image width={24} height={24} src='/GitHub-64px.png' />
+    icon: <Image alt='GitHub Logo' width={24} height={24} src='/GitHub-64px.png' />
   }
 ]
 
@@ -33,7 +33,7 @@ export default function Home() {
       <div className='absolute center w-full h-full'>
         <div id='text-paper' className='bg-primary center elevation-8 p-16 container'>
           <div className='text-primary text-center'>
-            <Logo style={{height: 64}} />
+            <Logo style={{height: 64}} strokeWidth={42} />
             <h3 className='mb-32 mt-0 bold'>
               Simon Kurz
             </h3>
@@ -61,19 +61,15 @@ export default function Home() {
         </div>
       </div>
       <div className='absolute bottom-0 right-0 flex bg-white p-4' style={{flexDirection: 'row'}}>
-        <div className='primary text-button' style={{marginRight: 8}} onClick={() => setOpenImprint(true)}>
+        <div className='primary text-button mt-8' onClick={() => setOpenImprint(true)}>
           Impressum
         </div>
         <div className='primary text-button' onClick={() => setOpenLic(true)}>
           Lizensen
         </div>
       </div>
-      {
-        openImprint && <Imprint close={() => setOpenImprint(false)}/>
-      }
-      {
-        openLic && <Licenses close={() => setOpenLic(false)} />
-      }
+      <Imprint close={() => setOpenImprint(false)} open={openImprint}/>
+      <Licenses close={() => setOpenLic(false)} open={openLic}/>
 
       <DotBackground />
     </>

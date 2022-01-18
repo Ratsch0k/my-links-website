@@ -91,12 +91,12 @@ function Dot(props: JSX.IntrinsicElements['mesh'] & {rPos: MutableRefObject<THRE
   });
 
   useEffect(() => {
-    document.addEventListener("mousemove", moveHandler);
-    document.addEventListener("touchmove", touchMoveHandler);
+    document.addEventListener('mousemove', moveHandler);
+    document.addEventListener('touchmove', touchMoveHandler);
 
     return () => {
-      document.removeEventListener("mousemove", moveHandler);
-      document.removeEventListener("touchmove", touchMoveHandler);
+      document.removeEventListener('mousemove', moveHandler);
+      document.removeEventListener('touchmove', touchMoveHandler);
     }
   }, [moveHandler, touchMoveHandler]);
 
@@ -200,10 +200,10 @@ function FollowDot() {
   });
 
   useEffect(() => {
-    document.addEventListener("mousemove", moveHandler);
+    document.addEventListener('mousemove', moveHandler);
 
     return () => {
-      document.removeEventListener("mousemove", moveHandler);
+      document.removeEventListener('mousemove', moveHandler);
     }
   }, [moveHandler]);
 

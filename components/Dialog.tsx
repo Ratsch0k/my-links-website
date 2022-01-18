@@ -7,7 +7,12 @@ export interface DialogProps extends ComponentPropsWithoutRef<'div'> {
   sx?: {
     root?: CSSProperties;
     content?: CSSProperties;
-  }
+  };
+
+  /**
+   * Whether the dialog is open.
+   */
+  open: boolean;
 }
 
 /**
@@ -16,19 +21,23 @@ export interface DialogProps extends ComponentPropsWithoutRef<'div'> {
  * Children are rendered in the center of the screen with a background.
  */
 const Dialog: FC<DialogProps> = (props) => {
-  const {children, id, className, style, sx} = props;
+  const {children, id, className, style, sx, open} = props;
 
-  return (
-    <div
-      id={id}
-      className={'absolute h-full w-full flex ' + className}
-      style={{backgroundColor: 'rgba(0.0, 0.0, 0.0, 0.6)', alignSelf: 'center', ...style, ...sx?.root}}
-    >
-      <div className='p-16 border-radius bg-white' style={{margin: 'auto', ...sx?.content}}>
-        {children}
+  if (!open) {
+    return null;
+  } else {
+    return (
+      <div
+        id={id}
+        className={'absolute h-full w-full flex ' + className}
+        style={{backgroundColor: 'rgba(0.0, 0.0, 0.0, 0.6)', alignSelf: 'center', ...style, ...sx?.root}}
+      >
+        <div className='p-16 border-radius bg-white' style={{margin: 'auto', ...sx?.content}}>
+          {children}
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 };
 
 export default Dialog;

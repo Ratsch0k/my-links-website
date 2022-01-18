@@ -1,4 +1,4 @@
-import {ComponentPropsWithoutRef} from "react";
+import {ComponentPropsWithoutRef} from 'react';
 
 /**
  * Available sizes.

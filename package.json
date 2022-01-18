@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "export": "next export",
-    "generate-disclaimer": "./scripts/generate-disclaimer.sh ./pages/_licenses.ts"
+    "generate-disclaimer": "./scripts/generate-disclaimer.sh ./components/_licenses.ts"
   },
   "dependencies": {
     "@react-three/fiber": "^7.0.1",
